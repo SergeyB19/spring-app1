@@ -11,6 +11,7 @@
           class="ru.alishev.springcourse.TestBean">
         <constructor-arg value="Neil"/>
     </bean>-->
+<context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
           class="ru.alishev.springcourse.ClassicalMusic">
@@ -18,7 +19,11 @@
 
     <bean id="musicPlayer"
           class="ru.alishev.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <!--        <constructor-arg ref="musicBean"/>-->
+        <property name="music" ref="musicBean"/>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
