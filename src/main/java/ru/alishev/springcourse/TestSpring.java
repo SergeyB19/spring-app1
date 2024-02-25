@@ -10,10 +10,22 @@ public class TestSpring {
 //        TestBean testBean = context.getBean("testBean", TestBean.class);
     /*    Music music = context.getBean("musicBean", Music.class);
         MusicPlayer musicPlayer = new MusicPlayer(music);*/
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        MusicPlayer firstmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        boolean comparison = firstmusicPlayer == secondmusicPlayer;
+        System.out.println(comparison);
+        System.out.println(firstmusicPlayer);
+        System.out.println(secondmusicPlayer);
+
+        firstmusicPlayer.setVolume(10);
+
+        System.out.println(firstmusicPlayer.getVolume());
+        System.out.println(secondmusicPlayer.getVolume());
+
+       /* musicPlayer.playMusic();
         System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        System.out.println(musicPlayer.getVolume());*/
 
         context.close();
     }
