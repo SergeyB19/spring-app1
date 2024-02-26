@@ -14,17 +14,21 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.alishev.springcourse.ClassicalMusic">
+          class="ru.alishev.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
+
     </bean>
 
-    <bean id="musicPlayer"
-          class="ru.alishev.springcourse.MusicPlayer"
-          scope="prototype">
-        <!--        <constructor-arg ref="musicBean"/>-->
-        <property name="music" ref="musicBean"/>
+    <!-- <bean id="musicPlayer"
+           class="ru.alishev.springcourse.MusicPlayer"
+           scope="prototype">
+         &lt;!&ndash;        <constructor-arg ref="musicBean"/>&ndash;&gt;
+         <property name="music" ref="musicBean"/>
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+         <property name="name" value="${musicPlayer.name}"/>
+         <property name="volume" value="${musicPlayer.volume}"/>
+     </bean>-->
 
 </beans>
