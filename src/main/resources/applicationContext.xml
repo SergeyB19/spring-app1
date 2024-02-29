@@ -1,3 +1,4 @@
+<!--
 <?xml  version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,6 +10,7 @@
 
     <context:component-scan base-package="ru.alishev.springcourse"/>
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
+-->
 
     <!--<bean id="testBean"
           class="ru.alishev.springcourse.TestBean">
@@ -34,4 +36,4 @@
          <property name="volume" value="${musicPlayer.volume}"/>
      </bean>-->
 
-</beans>
+<!--</beans>-->
